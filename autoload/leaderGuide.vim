@@ -432,6 +432,7 @@ function! s:winclose() " {{{
         noautocmd execute s:winnr.'wincmd w'
         call winrestview(s:winv)
     endif
+    silent! execute 'doautocmd User LeaderGuideClosePost'
 endfunction " }}}
 function! s:page_down() " {{{
     call feedkeys("\<c-c>", "n")
